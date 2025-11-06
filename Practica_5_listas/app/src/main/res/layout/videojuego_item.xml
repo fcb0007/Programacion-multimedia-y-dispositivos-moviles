@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewVideojuego"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewVideojuego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del videojuego"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="Suspicious0dp" />
+
+        <TextView
+            android:id="@+id/textViewPlataforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Plataforma"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textViewAño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Año de lanzamiento"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
