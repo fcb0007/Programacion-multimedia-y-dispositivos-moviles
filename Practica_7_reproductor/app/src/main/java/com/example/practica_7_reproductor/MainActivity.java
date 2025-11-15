@@ -2,8 +2,10 @@ package com.example.practica_7_reproductor;
 
 import android.media.Image;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView textViewTiempoActual;
     private TextView textViewTiempoTotal;
+    private SoundPool soundPool;
+    private Button botonTrompeta;
+    private Button botonPiano;
+    private Button botonBateria;
+    private Button botonGuitarra;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
 
-           });
+        });
         mediaPlayer = MediaPlayer.create(this, R.raw.punch_deck_zen_garden);
         botonPlay = findViewById(R.id.botonPlay);
         botonPausa = findViewById(R.id.botonPausa);
@@ -41,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
         textViewTiempoActual = findViewById(R.id.textViewTiempoActual);
         textViewTiempoTotal = findViewById(R.id.textViewTiempoTotal);
+
 
         textViewCancion.setText("Punch Deck - Zen Garden II: Apocalypse");
 
@@ -70,12 +80,16 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(this, 500);
 
             }
-    };
+        };
         handler.post(actualizarSeekBar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override public void onStartTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
-            @Override public void onStopTrackingTouch(SeekBar seekBar) {}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -83,10 +97,28 @@ public class MainActivity extends AppCompatActivity {
                     mediaPlayer.seekTo(progress);
                 }
 
-                }
+            }
 
-            });
+        });
+
+        soundPool = new SoundPool.Builder().setMaxStreams(10).build();
+
+        int sonidoTrompeta = soundPool.load(this, R.raw.trompeta, 1);
+        int sonidoPiano = soundPool.load(this, R.raw.piano, 1);
+        int sonidoBateria = soundPool.load(this, R.raw.bateria, 1);
+        int sonidoGuitarra = soundPool.load(this, R.raw.guitarra, 1);
+
+        botonTrompeta = findViewById(R.id.botonTrompeta);
+        botonPiano = findViewById(R.id.botonPiano);
+        botonBateria = findViewById(R.id.botonBateria);
+        botonGuitarra = findViewById(R.id.botonGuitarra);
+
+        botonTrompeta.setOnClickListener(v -> soundPool.play(sonidoTrompeta, 1, 1, 1, 0, 1));
+        botonPiano.setOnClickListener(v -> soundPool.play(sonidoPiano, 1, 1, 1, 0, 1));
+        botonBateria.setOnClickListener(v -> soundPool.play(sonidoBateria, 1, 1, 1, 0, 1));
+        botonGuitarra.setOnClickListener(v -> soundPool.play(sonidoGuitarra, 1, 1, 1, 0, 1));
 
 
-        }
+
     }
+}

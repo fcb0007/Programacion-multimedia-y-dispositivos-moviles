@@ -110,4 +110,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <Button
+        android:id="@+id/botonTrompeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#282828"
+        android:text="Trompeta"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/botonPiano"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/botonPiano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#282828"
+        android:text="Piano"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/botonBateria"
+        app:layout_constraintStart_toEndOf="@+id/botonTrompeta"
+        app:layout_constraintTop_toBottomOf="@+id/botonPlay"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/botonBateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#282828"
+        android:text="Batería"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/botonGuitarra"
+        app:layout_constraintStart_toEndOf="@+id/botonPiano"
+        app:layout_constraintTop_toBottomOf="@+id/botonPausa" />
+
+    <Button
+        android:id="@+id/botonGuitarra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#282828"
+        android:text="Guitarra"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botonBateria" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
