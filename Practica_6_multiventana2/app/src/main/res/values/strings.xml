@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Practica_6_multiventana</string>
+    <string name="textoToolbar">Menú Principal</string>
+    <string name="textoBotonDesconectar">Desconectar</string>
 </resources>

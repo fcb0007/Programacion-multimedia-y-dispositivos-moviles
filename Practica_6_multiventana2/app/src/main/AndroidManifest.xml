@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practica_6_multiventana">
         <activity
+            android:name=".ActivitySesion"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

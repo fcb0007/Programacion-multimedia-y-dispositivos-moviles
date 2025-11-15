@@ -1,5 +1,6 @@
 package com.example.practica_6_multiventana;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,12 +44,20 @@ public class MainActivity extends AppCompatActivity {
             Boolean recordarContraseña = switchRecordarContraseña.isChecked();
 
             if (correo.equals("correo@correo.com") && contraseña.equals("123") && recordarContraseña){
-                textViewMensaje.setTextColor(getResources().getColor(R.color.verde));
-                textViewMensaje.setText("Usuario y contraseña correctos \n Almacenados para siguientes accesos");
+                Intent intent = new Intent(this, ActivitySesion.class);
+                intent.putExtra("correo", campoCorreo.getText().toString());
+                campoCorreo.setText("");
+                campoContraseña.setText("");
+                textViewMensaje.setText("");
+                startActivity(intent);
 
             }else if(correo.equals("correo@correo.com") && contraseña.equals("123")){
-                textViewMensaje.setTextColor(getResources().getColor(R.color.verde));
-                textViewMensaje.setText("Usuario y contraseña correctos");
+                Intent intent = new Intent(this, ActivitySesion.class);
+                intent.putExtra("correo", campoCorreo.getText().toString());
+                campoCorreo.setText("");
+                campoContraseña.setText("");
+                textViewMensaje.setText("");
+                startActivity(intent);
             }else{
                 textViewMensaje.setTextColor(getResources().getColor(R.color.rojo));
                 textViewMensaje.setText("Usuario y/o contraseña incorrectos");
